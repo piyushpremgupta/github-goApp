@@ -8,8 +8,23 @@ import (
 	github "Accurics/handler/github"
 	"time"
 	"bytes"
+	"strings"
+	"math/rand"
 )
 
+func RandomString() string {
+	rand.Seed(time.Now().UnixNano())
+	chars := []rune("ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ" +
+	"abcdefghijklmnopqrstuvwxyzåäö" +
+	"0123456789")
+	length := 8
+	var b strings.Builder
+	for i := 0; i < length; i++ {
+		b.WriteRune(chars[rand.Intn(len(chars))])
+	}
+	str := b.String() // E.g. "ExcbsVQs"
+	return str
+}
 func basicAuth(username,password string) string{
 	auth:= username+ ":" + password
 	return base64.StdEncoding.EncodeToString([]byte(auth))
@@ -21,7 +36,7 @@ func AuthHandler(w http.ResponseWriter , r *http.Request){
 
 	json.NewDecoder(r.Body).Decode(&cred)
 
-	Payload:=map[string]interface{}{"scopes":[]string{"public_repo"},"note":"admin script"}
+	Payload:=map[string]interface{}{"scopes":[]string{"public_repo"},"note":RandomString()}
 	PayloadBytes,err:=json.Marshal(Payload)
 	if err != nil {
 		json.NewEncoder(w).Encode(map[string]interface{}{"Error":err})
