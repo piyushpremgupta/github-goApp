@@ -1,0 +1,111 @@
+{{ define "github" }}
+{{ template "header" }}
+<script src="/static/js/utils/utils.js"></script>
+<script src="/static/js/common/github.js"></script>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div  style="margin-top:50px">
+                    <h1>CreateBranch</h1>
+                    <form id="form">
+                        <div class="form-group">
+                            <label for="organisation">Organisation</label>
+                            <input required type="input" class="form-control form-control-sm" id="organisation" placeholder="organisation" name="organisation">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="repository">Repository</label>
+                            <input required type="repository" class="form-control form-control-sm" id="repository" placeholder="repository" name="repository">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="ftrbrnch">FeatureBranch</label>
+                            <input required type="ftrbrnch" class="form-control form-control-sm" id="ftrbrnch" placeholder="ftrbrnch" name="ftrbrnch">
+                            
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="form-control btn btn-danger" id="submit">Submit</button>
+                            
+                        </div>
+                    </form>
+                    
+                </div>
+                <div  style="margin-top:50px">
+                    <h1>ModifyFile</h1>
+                    <form id="form">
+                        <div class="form-group">
+                            <label for="organisation">Organisation</label>
+                            <input required type="input" class="form-control form-control-sm" id="organisation" placeholder="organisation" name="organisation">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="repository">Repository</label>
+                            <input required type="repository" class="form-control form-control-sm" id="repository" placeholder="repository" name="repository">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="ftrbrnch">FeatureBranch</label>
+                            <input required type="ftrbrnch" class="form-control form-control-sm" id="ftrbrnch" placeholder="ftrbrnch" name="ftrbrnch">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="filepath">FilePath</label>
+                            <input required type="filepath" class="form-control form-control-sm" id="filepath" placeholder="filepath" name="filepath">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="filecontent">FileContent</label>
+                            <input required type="filecontent" class="form-control form-control-sm" id="filecontent" placeholder="filecontent" name="filecontent">
+                            
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="form-control btn btn-danger" id="submit">Submit</button>
+                            
+                        </div>
+                    </form>
+                    
+                </div>
+                <div  style="margin-top:50px">
+                    <h1>CreatePullRequest</h1>
+                    <form id="form">
+                        <div class="form-group">
+                            <label for="organisation">Organisation</label>
+                            <input required type="input" class="form-control form-control-sm" id="organisation" placeholder="organisation" name="organisation">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="repository">Repository</label>
+                            <input required type="repository" class="form-control form-control-sm" id="repository" placeholder="repository" name="repository">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input required type="title" class="form-control form-control-sm" id="title" placeholder="title" name="title">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="head">Head</label>
+                            <input required type="head" class="form-control form-control-sm" id="head" placeholder="head" name="head">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="base">Base</label>
+                            <input required type="base" class="form-control form-control-sm" id="base" placeholder="base" name="base">
+                            
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="form-control btn btn-danger" id="submit">Submit</button>
+                            
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+{{ template "footer" }}
+{{ end }}
